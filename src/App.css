@@ -925,3 +925,36 @@ body::after {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============== BACKDROP-FILTER FALLBACK ==============
+   Some in-app webviews (Instagram, WhatsApp, Messenger, older
+   Chrome iOS, Firefox iOS) don't support backdrop-filter.
+   Without this, glass cards become fully transparent and text
+   becomes unreadable over the photo. We swap to a solid dark
+   tint so the design degrades gracefully. */
+@supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  .app__header,
+  .app__calc,
+  .history,
+  .player {
+    background: rgba(20, 12, 32, 0.92) !important;
+  }
+
+  .btn,
+  .history__entry {
+    background: rgba(40, 28, 58, 0.85) !important;
+  }
+
+  .btn--operator {
+    background: rgba(176, 149, 210, 0.22) !important;
+  }
+
+  .btn--accent {
+    /* keep the gradient — looks great even without blur behind it */
+    background: var(--accent-grad) !important;
+  }
+
+  .btn--danger {
+    background: rgba(255, 100, 110, 0.18) !important;
+  }
+}
