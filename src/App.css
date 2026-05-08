@@ -71,14 +71,16 @@
 html {
   margin: 0;
   padding: 0;
-  min-height: 100dvh;
+  min-height: 100vh;
+  min-height: 100lvh;
   background-color: var(--ink);
 }
 
 body, #root {
   margin: 0;
   padding: 0;
-  min-height: 100dvh;
+  min-height: 100vh;
+  min-height: 100lvh;
   background: transparent;
   color: var(--color-text);
   font-family: var(--font-sans);
@@ -88,6 +90,7 @@ body, #root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
 }
 
 /* ============== HERO BACKGROUND LAYER ============== */
@@ -99,7 +102,11 @@ body {
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
   background-image: url('/hero.webp');
   background-size: cover;
   background-position: center 18%;
@@ -113,7 +120,11 @@ body::before {
 body::after {
   content: '';
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
   background:
     radial-gradient(ellipse 70% 28% at 50% 0%, rgba(20, 12, 32, 0.50) 0%, transparent 75%),
     radial-gradient(ellipse 90% 35% at 50% 100%, rgba(244, 143, 177, 0.16) 0%, transparent 70%);
@@ -138,7 +149,8 @@ body::after {
     max(var(--gap-4), env(safe-area-inset-left));
   max-width: 880px;
   margin: 0 auto;
-  min-height: 100dvh;
+  min-height: 100vh;
+  min-height: 100lvh;
   align-content: center;
   grid-template-areas:
     'header'
@@ -547,7 +559,7 @@ body::after {
 }
 
 @media (max-width: 959px) {
-  .history { max-height: 38dvh; }
+  .history { max-height: 38lvh; }
 }
 
 .history__bias {
