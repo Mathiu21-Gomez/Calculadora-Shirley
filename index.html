@@ -22,8 +22,21 @@
     />
     <link rel="preload" as="image" href="/hero.webp" />
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="background:#1a1224;color:#fafafa;margin:0;font-family:system-ui,-apple-system,sans-serif;">
+    <div id="root">
+      <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100lvh;">
+        <div style="text-align:center;opacity:0.6;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;">
+          <div style="font-size:32px;margin-bottom:12px;">♥</div>
+          <div>Cargando…</div>
+        </div>
+      </div>
+    </div>
+    <noscript>
+      <div style="padding:32px;text-align:center;">
+        <h1>Necesitamos JavaScript</h1>
+        <p>Activá JavaScript en tu navegador para usar la calculadora.</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
